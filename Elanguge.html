@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜英文單字遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .game-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            text-transform: lowercase;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>猜英文單字遊戲</h1>
+        <p>提示：這是一種動物</p>
+        <input type="text" id="guessInput" placeholder="輸入你的單字">
+        <button id="guessButton">猜測</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        // 設定固定的英文單字作為答案
+        const secretWord = "crocodile";  // 你可以更改為其他單字
+        let attempts = 0;
+
+        document.getElementById('guessButton').addEventListener('click', function() {
+            const guessInput = document.getElementById('guessInput');
+            const message = document.getElementById('message');
+            const userGuess = guessInput.value.trim().toLowerCase(); // 忽略大小寫
+
+            attempts++;
+
+            if (userGuess === "") {
+                message.textContent = '請輸入一個英文單字！';
+                message.style.color = 'red';
+                return;
+            }
+
+            if (userGuess === secretWord) {
+                message.textContent = `🎉 恭喜你猜對了！答案是「${secretWord}」，你總共嘗試了 ${attempts} 次。`;
+                message.style.color = 'green';
+            } else {
+                message.textContent = '❌ 錯了，再試試看！';
+                message.style.color = 'red';
+            }
+
+            guessInput.value = '';
+            guessInput.focus();
+        });
+    </script>
+</body>
+</html>
