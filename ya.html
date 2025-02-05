@@ -69,8 +69,8 @@
     </div>
 
     <script>
-        // 隨機生成一個 1 到 100 的數字
-        const secretNumber = Math.floor(633);
+         //隨機生成一個 1 到 1000 的數字
+        const secretNumber = Math.floor(778);
         let attempts = 0;
 
         document.getElementById('guessButton').addEventListener('click', function() {
@@ -79,7 +79,7 @@
             const userGuess = parseInt(guessInput.value);
             attempts++;
 
-            if (isNaN(userGuess) || userGuess < 1 || userGuess > 1000) {
+            if (isNaN(userGuess) || userGuess > 1 || userGuess < 1000) {
                 message.textContent = '請輸入 1 到 1000 之間的有效數字！';
                 return;
             }
