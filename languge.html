@@ -62,7 +62,7 @@
 <body>
     <div class="game-container">
         <h1>猜成語遊戲</h1>
-        <p>提示：四個字，與不舒服相關</p>
+        <p>提示：四個字，與動物相關</p>
         <input type="text" id="guessInput" placeholder="輸入你的成語">
         <button id="guessButton">猜測</button>
         <p class="message" id="message"></p>
@@ -70,7 +70,7 @@
 
     <script>
         // 設定固定的成語作為答案
-        const secretIdiom = "上吐下瀉";  // 你可以更改為其他成語
+        const secretIdiom = "九牛二虎";  // 你可以更改為其他成語
         let attempts = 0;
 
         document.getElementById('guessButton').addEventListener('click', function() {
