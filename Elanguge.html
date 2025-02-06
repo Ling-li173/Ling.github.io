@@ -62,9 +62,8 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>猜英文單字遊戲</h1>
-        <p>提示：一種動物</p>
-        <p>提示:現已絕種，小朋友會愛上</p>
+        <h1>猜燈謎遊戲</h1>
+        <p>女人身上什麼東西，爸爸可以碰兩次，男朋友可碰一次，老公卻碰不到？（猜一身體部位）</p>
         <input type="text" id="guessInput" placeholder="輸入你的單字">
         <button id="guessButton">猜測</button>
         <p class="message" id="message"></p>
@@ -72,7 +71,7 @@
 
     <script>
         // 設定固定的英文單字作為答案
-        const secretWord = "Triceratops";  // 你可以更改為其他單字
+        const secretWord = "嘴唇";  // 你可以更改為其他單字
         let attempts = 0;
 
         document.getElementById('guessButton').addEventListener('click', function() {
